@@ -98,7 +98,7 @@ These snippets are included with the distribution in the automatic tests as ts-s
 	pv = ini.GetValue("section1", "key1");
 	ASSERT_STREQ(pv, "value1");
 
-	// get the value of a key which may have multiple 
+	// get the value of a key which may have multiple
 	// values. If hasMultiple is true, then there are
 	// multiple values and just one value has been returned
 	bool hasMulti;
@@ -128,10 +128,10 @@ These snippets are included with the distribution in the automatic tests as ts-s
 ### MODIFYING DATA
 
 ```c++
-	// add a new section 
+	// add a new section
 	rc = ini.SetValue("section1", nullptr, nullptr);
 	if (rc < 0) { /* handle error */ };
-	ASSERT_EQ(rc, SI_INSERTED); 
+	ASSERT_EQ(rc, SI_INSERTED);
 
 	// not an error to add one that already exists
 	rc = ini.SetValue("section1", nullptr, nullptr);
