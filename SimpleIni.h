@@ -2557,7 +2557,10 @@ CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::Save(
                 if (!convert.ConvertToStore(iValue->pItem)) {
                     return SI_FAIL;
                 }
-                a_oOutput.Write(m_bSpaces ? " = " : "=");
+                if (!m_bAllowEmptyValues)
+                {
+                    a_oOutput.Write(m_bSpaces ? " = " : "=");
+                }
                 if (m_bAllowMultiLine && IsMultiLineData(iValue->pItem)) {
                     // multi-line data needs to be processed specially to ensure
                     // that we use the correct newline format for the current system
